@@ -160,4 +160,3 @@ const QUESTIONS = [
       "right_answer": 1
     }
   ]
-  

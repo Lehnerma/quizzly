@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
     <title>Quizzly</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Quizz App</span>
+      </div>
+    </nav>
+    <main class="container">
+      <div class="card quiz--card" >
+        <img src="./assets/img/pencil-bg.jpg" class="card-img-top" alt="pencil background yellow " />
+        <div class="card-body">
+          <h5 class="card-title">title</h5>
+
+          <div class="card my-2">
+            <div class="card-body">Antwort</div>
+          </div>
+          <div class="card my-2">
+            <div class="card-body ">Antwort</div>
+          </div>
+          <div class="card my-2">
+            <div class="card-body">Antwort</div>
+          </div>
+          <div class="card my-2">
+            <div class="card-body">Antwort</div>
+          </div>
+
+          <div class="card--footer">
+
+            <p><b>1</b> von <b>5</b> Fragen</p>
+            <button class="btn btn-primary">Nächste Frage</button>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
