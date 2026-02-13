@@ -8,7 +8,7 @@
     <script src="script.js"></script>
     <title>Quizzly</title>
   </head>
-  <body>
+  <body onload="init()">
     <nav class="navbar bg-body-tertiary">
       <div class="container-fluid">
         <span class="navbar-brand mb-0 h1">Quizz App</span>
@@ -35,7 +35,7 @@
 
           <div class="card--footer">
 
-            <p><b>1</b> von <b>5</b> Fragen</p>
+            <p><b>1</b> von <b id="fullAmount">5</b> Fragen</p>
             <button class="btn btn-primary">Nächste Frage</button>
           </div>
 
