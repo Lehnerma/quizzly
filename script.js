@@ -160,9 +160,12 @@ const QUESTIONS = [
     right_answer: 1,
   },
 ];
+let currentQuestion = 0;
 
 function init() {
   renderAmount();
+  renderTitle();
+  renderAnswers();
 }
 
 const renderAmount = () => {
@@ -170,4 +173,32 @@ const renderAmount = () => {
   FULL_AMOUNT.innerText = QUESTIONS.length;
 };
 
-function renderTitle() {}
+const renderCurrentAmount = () => {
+  document.getElementById("currentAmount").innerText = currentQuestion + 1;
+};
+
+const renderTitle = () => {
+  document.getElementById("question_text").innerText = QUESTIONS[currentQuestion].question;
+};
+
+const renderAnswers = () => {
+  const question = QUESTIONS[currentQuestion];
+  document.getElementById("answer_1").innerText = question.answer_1;
+  document.getElementById("answer_2").innerText = question.answer_2;
+  document.getElementById("answer_3").innerText = question.answer_3;
+  document.getElementById("answer_4").innerText = question.answer_4;
+};
+
+const countUp = () => currentQuestion++;
+
+function nextQuestion() {
+  countUp();
+  init();
+  renderCurrentAmount();
+}
+
+function checkAnswer(answer) {
+  const rightAnswer = QUESTIONS[currentQuestion].right_answer;
+  const selectAnswer = answer.slice(7);
+  console.log(rightAnswer + ' and the chosen one: ' + selectAnswer);
+}

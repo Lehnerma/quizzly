@@ -1,6 +1,7 @@
 :root{
     --dark-bg: #27355C;
     --light-bg: #F7F7F7;
+    --medium-bg: #cbc8c8;
     --true-answer: #B7F799;
     --grey-mid: #D6D6D6;
 
@@ -21,7 +22,12 @@ body{
     justify-content: center;
     align-items: center;
 }
-
+div .card{
+    &:hover{
+        background-color: var(--medium-bg);
+        cursor: pointer ;
+    }
+}
 .quiz--card{
     width: 30rem;
 }

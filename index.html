@@ -15,30 +15,28 @@
       </div>
     </nav>
     <main class="container">
-      <div class="card quiz--card" >
+      <div class="card quiz--card shadow">
         <img src="./assets/img/pencil-bg.jpg" class="card-img-top" alt="pencil background yellow " />
         <div class="card-body">
-          <h5 class="card-title">title</h5>
+          <h5 class="card-title" id="question_text">title</h5>
 
-          <div class="card my-2">
-            <div class="card-body">Antwort</div>
+          <div class="card my-2 shadow-sm" onclick="checkAnswer('answer_1')">
+            <div class="card-body" id="answer_1" >Antwort</div>
           </div>
-          <div class="card my-2">
-            <div class="card-body ">Antwort</div>
+          <div class="card my-2 shadow-sm" onclick="checkAnswer('answer_2')">
+            <div class="card-body" id="answer_2">Antwort</div>
           </div>
-          <div class="card my-2">
-            <div class="card-body">Antwort</div>
+          <div class="card my-2 shadow-sm" onclick="checkAnswer('answer_3')">
+            <div class="card-body" id="answer_3">Antwort</div>
           </div>
-          <div class="card my-2">
-            <div class="card-body">Antwort</div>
+          <div class="card my-2 shadow-sm" onclick="checkAnswer('answer_4')">
+            <div class="card-body" id="answer_4">Antwort</div>
           </div>
 
           <div class="card--footer">
-
-            <p><b>1</b> von <b id="fullAmount">5</b> Fragen</p>
-            <button class="btn btn-primary">Nächste Frage</button>
+            <p><b id="currentAmount">1</b> von <b id="fullAmount">5</b> Fragen</p>
+            <button class="btn btn-primary" onclick="nextQuestion()">Nächste Frage</button>
           </div>
-
         </div>
       </div>
     </main>
