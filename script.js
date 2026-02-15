@@ -162,43 +162,55 @@ const QUESTIONS = [
 ];
 let currentQuestion = 0;
 
+const renderCurrentAmount = () => (document.getElementById("currentAmount").innerText = currentQuestion + 1);
+const renderQuestion = () => (document.getElementById("question_text").innerText = QUESTIONS[currentQuestion].question);
+
 function init() {
   renderAmount();
-  renderTitle();
+  renderQuestion();
   renderAnswers();
+  renderCurrentAmount();
 }
 
-const renderAmount = () => {
+function renderAmount() {
   const FULL_AMOUNT = document.getElementById("fullAmount");
   FULL_AMOUNT.innerText = QUESTIONS.length;
-};
+}
 
-const renderCurrentAmount = () => {
-  document.getElementById("currentAmount").innerText = currentQuestion + 1;
-};
-
-const renderTitle = () => {
-  document.getElementById("question_text").innerText = QUESTIONS[currentQuestion].question;
-};
-
-const renderAnswers = () => {
+function renderAnswers() {
   const question = QUESTIONS[currentQuestion];
   document.getElementById("answer_1").innerText = question.answer_1;
   document.getElementById("answer_2").innerText = question.answer_2;
   document.getElementById("answer_3").innerText = question.answer_3;
   document.getElementById("answer_4").innerText = question.answer_4;
-};
+}
 
-const countUp = () => currentQuestion++;
-
-function nextQuestion() {
-  countUp();
+function countUp() {
+  if (currentQuestion == 19) {
+    currentQuestion = 0;
+  } else {
+    currentQuestion++;
+  }
   init();
-  renderCurrentAmount();
+}
+
+function countDown() {
+  if (currentQuestion == 0) {
+    currentQuestion = QUESTIONS.length - 1;
+  } else {
+    currentQuestion--;
+  }
+  init();
 }
 
 function checkAnswer(answer) {
   const rightAnswer = QUESTIONS[currentQuestion].right_answer;
-  const selectAnswer = answer.slice(7);
-  console.log(rightAnswer + ' and the chosen one: ' + selectAnswer);
+  const selectAnswer = answer.slice(-1);
+  let idRightAnswer = `answer_${rightAnswer}`;
+  if (rightAnswer == selectAnswer) {
+    document.getElementById(answer).parentElement.classList.add("bg-success");
+  } else {
+    document.getElementById(answer).parentNode.classList.add("bg-danger");
+    document.getElementById(idRightAnswer).parentNode.classList.add("bg-success");
+  }
 }

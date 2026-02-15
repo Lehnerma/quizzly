@@ -21,7 +21,7 @@
           <h5 class="card-title" id="question_text">title</h5>
 
           <div class="card my-2 shadow-sm" onclick="checkAnswer('answer_1')">
-            <div class="card-body" id="answer_1" >Antwort</div>
+            <div class="card-body" id="answer_1">Antwort</div>
           </div>
           <div class="card my-2 shadow-sm" onclick="checkAnswer('answer_2')">
             <div class="card-body" id="answer_2">Antwort</div>
@@ -35,7 +35,10 @@
 
           <div class="card--footer">
             <p><b id="currentAmount">1</b> von <b id="fullAmount">5</b> Fragen</p>
-            <button class="btn btn-primary" onclick="nextQuestion()">Nächste Frage</button>
+            <div>
+              <button class="btn btn-danger" disabled onclick="countDown()">⏮️ Reset</button>
+              <button class="btn btn-primary" disabled onclick="countUp()">Nächste Frage ⏭️</button>
+            </div>
           </div>
         </div>
       </div>
