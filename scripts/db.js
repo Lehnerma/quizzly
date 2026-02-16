@@ -39,6 +39,9 @@ const QUESTIONS = [
       "answer_4": "<dl>",
       "right_answer": 3
     },
+    
+  ]
+  const db2 = [
     {
       "question": "Welches HTML-Element wird für den größten Textbereich verwendet?",
       "answer_1": "<input>",
