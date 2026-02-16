@@ -17,15 +17,20 @@
     </nav>
     <main class="container">
 
-      <div class="quiz--card shadow text-center d-non" id="quiz--end">
-        <img src="./assets/img/pencil-bg.jpg" class="card-img-top" alt="pencil background yellow " />
-        <h2 class="">Quiz Ende</h2>
+      <div class="quiz--card shadow text-center d-none" id="quiz--end">
         <img src="./assets/img/pokal.png" alt="Pokal" class="card-end-img">
-        <p>Du hast <b>xx</b> von <b>xx</b> richtig beantwortet</p>
+        <h2 class="">Quiz Ende</h2>
+        <p>Du hast <b id="right_answers"></b> von <b id="end_fullAmount"></b> richtig beantwortet</p>
+        <button class="btn btn-primary" onclick="restart()">Restart</button>
       </div>
 
-      <div class="card quiz--card shadow" id="quiz--screen">
+      <div class="card quiz--card shadow " id="quiz--screen">
         <img src="./assets/img/pencil-bg.jpg" class="card-img-top" alt="pencil background yellow " />
+
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+          <div id="progress_bar" class="progress-bar" style="width: 0%"></div>
+        </div>
+
         <div class="card-body body-card">
           <h5 class="card-title" id="question">title</h5>
 
